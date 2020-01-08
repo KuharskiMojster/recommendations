@@ -15,6 +15,7 @@ import si.kuharskimojster.services.RecipeService;
 public class RecommendationController {
 
 
+
     @Autowired
     RecipeService recipeService;
 

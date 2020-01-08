@@ -10,7 +10,6 @@ import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 @SpringBootApplication
 public class ApiApplication {
 
-
     public static void main(String[] args) {
         SpringApplication.run(ApiApplication.class, args);
     }
