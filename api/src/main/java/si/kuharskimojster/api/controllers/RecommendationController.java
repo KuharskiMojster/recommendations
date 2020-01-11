@@ -1,5 +1,6 @@
 package si.kuharskimojster.api.controllers;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,6 @@ import si.kuharskimojster.services.RecipeService;
 @RestController
 @RequestMapping("/v1")
 public class RecommendationController {
-
 
     @Autowired
     RecipeService recipeService;
@@ -37,11 +37,6 @@ public class RecommendationController {
     public ResponseEntity<ResponseModel> getTopRatedUserRecommendations(@RequestParam(name = "userId") Long userId, @RequestParam(name = "limit") int limit) {
         return new ResponseEntity<>(new ResponseModel(recipeService.recommendTopRecipesForUser(userId, limit), HttpStatus.OK.value()), HttpStatus.OK);
     }
-
-
-
-
-
 
 
 }
