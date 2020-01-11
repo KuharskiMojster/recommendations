@@ -18,11 +18,6 @@ public class RecommendationController {
     @Autowired
     RecipeService recipeService;
 
-    @GetMapping("/health")
-    public ResponseEntity<ResponseModel> getHealth() {
-        return new ResponseEntity<>(new ResponseModel("Health check OK", HttpStatus.OK.value()), HttpStatus.OK);
-    }
-
     @GetMapping("/latest-user-recommendations")
     public ResponseEntity<ResponseModel> getLatestRecommendationsForUser(@RequestParam(name = "userId") Long userId, @RequestParam(name = "limit") int limit) {
         return new ResponseEntity<>(new ResponseModel(recipeService.recommendLatestRecipesForUser(userId, limit), HttpStatus.OK.value()), HttpStatus.OK);
